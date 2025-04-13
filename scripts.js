@@ -65,17 +65,33 @@ window.addEventListener("resize", () => {
 init();
 animate();
 
-// Dark Mode/Light Mode
+// Dark Mode/Light Mode 
 function changeMode() {
     document.body.classList.toggle("mode");
     let modeBtn = document.getElementById("ModeBtn");
 
     if (document.body.classList.contains("mode")) {
-        modeBtn.src = "icons-logos/sun.png"; 
+        modeBtn.src = "icons-logos/sun.png";
+        localStorage.setItem("mode", "light");
     } else {
+        modeBtn.src = "icons-logos/moon.png";
+        localStorage.setItem("mode", "dark");
+    }
+}
+
+function initializeMode() {
+    const savedMode = localStorage.getItem("mode");
+    const modeBtn = document.getElementById("ModeBtn");
+    
+    if (savedMode === "light") {
+        document.body.classList.add("mode");
+        modeBtn.src = "icons-logos/sun.png";
+    } else {
+        document.body.classList.remove("mode");
         modeBtn.src = "icons-logos/moon.png";
     }
 }
+document.addEventListener("DOMContentLoaded", initializeMode);
 
 // Hamburger Menu
 function toggleMenu() {
