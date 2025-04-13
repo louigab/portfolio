@@ -1,0 +1,113 @@
+html, body {
+    scroll-behavior: smooth;    
+    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+nav {  
+    backdrop-filter: blur(10px);
+}
+
+nav,
+li, 
+.Name, 
+.About, 
+.Tech, 
+.Contacts {
+    font-family:'Doto';
+}
+
+body {
+    background: linear-gradient(to bottom, rgb(6, 6, 30) 5%, rgb(8, 8, 50) 35%, rgb(10, 10, 70) 65%, rgb(12, 12, 90) 100%);
+    font-family: 'Kode Mono';
+    min-height: 100vh;
+}
+     
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.mobile-menu {
+    backdrop-filter: blur(10px);
+}
+
+/*Light Mode*/
+.mode {
+    background: linear-gradient(to bottom, rgb(204, 75, 64) 5%, rgb(204, 104, 69) 35%, rgb(204, 142, 84) 65%, rgb(204, 175, 115) 100%);
+    color: black;
+}
+
+.certificate-img {
+    transition: transform 0.3s ease;
+}
+
+#certificateModal {
+    transition: opacity 0.3s ease;
+}
+
+#certificateModal.hidden {
+    display: none;
+    opacity: 0;
+}
+
+#certificateModal:not(.hidden) {
+    opacity: 1;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-image {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.fade-in-up {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-down {
+    animation: fadeInDown 1s ease forwards;
+}
+
+.delay-200 { animation-delay: 0.2s; }
+.delay-400 { animation-delay: 0.4s; };
+

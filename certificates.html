@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Louis Gabriel Damondamon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+    <body class="no-scrollbar m-0 p-0 overflow-x-hidden relative">
+        <canvas id="starsCanvas"></canvas>
+        
+        <!-- navbar -->
+        <nav class=" flex justify-center w-full text-white py-5 px-10 fixed top-0 z-50 fade-in-down">
+            <div class="container flex justify-between items-center z-10">
+                <div class="text-2xl font-bold hover:scale-110 inline-block drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">&lt;&lt;&gt;&gt;</div>
+                <div class="flex lg:space-x-10">
+                    <button onclick="changeMode()" class="hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">
+                        <img id="ModeBtn"src="icons-logos/moon.png" class="w-7 h-7">
+                    </button>
+                    <button class="hamburger-menu hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300 ml-9 lg:hidden" onclick="toggleMenu()">
+                        <img src="icons-logos/hamburger-menu.png" alt="hamburger_menu" class="w-10 h-10">
+                    </button>
+                    <ul class="hidden lg:flex space-x-5 ">
+                        <li><a href="home.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">HOME</a></li>
+                        <li><a href="about.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">ABOUT</a></li>
+                        <li><a href="techstack.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">TECH STACK</a></li>
+                        <li><a href="certificates.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">CERTIFICATES</a></li>
+                        <li><a href="contacts.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">CONTACTS</a></li>
+                    </ul>
+                    
+                </div>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu-->
+        <div id="mobile-menu" class="underglow-menu mobile-menu flex justify-center hidden z-50 top-20 fixed w-full text-white fade-in-down">
+            <ul class="flex flex-col items-center space-y-4 py-6">
+                <li><a href="home.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">HOME</a></li>
+                <li><a href="about.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">ABOUT ME</a></li>
+                <li><a href="techstack.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">TECH STACK</a></li>
+                <li><a href="certificates.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">CERTIFICATES</a></li>
+                <li><a href="contacts.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">CONTACTS</a></li>
+            </ul>
+        </div>
+
+        <!-- Certificates -->
+        <section id="certificates" class="min-h-screen pt-20">
+            <div class="container mx-auto text-center px-4">
+                <h2 class="Tech text-4xl font-bold mb-8 text-white drop-shadow-[0_0_5px_rgba(255,255,255,1)] fade-in-up">CERTIFICATES</h2>
+                <div class="flex flex-wrap justify-center gap-8 mx-10">
+                    <img src="certficates/damondamon-word-2019-associate-certificate.jpg" alt="damondamon-word-2019-associate-certificate" class="certificate-img w-60 h-auto border-4 border-white hover:scale-110 hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-transform duration-300 cursor-pointer fade-in-up delay-200">
+                    <img src="certficates/damondamon-powerPoint-2019-Associate-certificate.jpg" alt="damondamon_powerPoint_2019_associate" class="certificate-img w-60 h-auto border-4 border-white hover:scale-110 hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-transform duration-300 cursor-pointer fade-in-up delay-200">
+                    <img src="certficates/damondamon-javafoundations-Certificate.jpg" alt="damondamon_javafoundations-certificate" class="certificate-img w-60 h-auto border-4 border-white hover:scale-110 hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-transform duration-300 cursor-pointer fade-in-up delay-200">
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal -->
+        <div id="certificateModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[100] hidden">
+            <div class="relative">
+                <img id="modalImage" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain">
+            </div>
+        </div>
+        
+        <script src="scripts.js"></script>
+    </body>
+</html>
