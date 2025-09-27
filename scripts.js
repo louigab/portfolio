@@ -3,14 +3,23 @@ function initSplashScreen() {
     const splashScreen = document.getElementById('splashScreen');
     if (!splashScreen) return;
 
-    // After icon sequence completes, open doors and fly chevrons
+    const hasSeenSplash = sessionStorage.getItem('hasSeenSplash');
+    
+    if (hasSeenSplash) {
+        return;
+    }
+
+    // Show splash for first-time
+    splashScreen.classList.add('show');
+    sessionStorage.setItem('hasSeenSplash', 'true');
+
     setTimeout(() => {
         splashScreen.classList.add('open-doors');
     }, 2000);
 
-    // Remove splash after door animation completes
     setTimeout(() => {
         splashScreen.style.display = 'none';
+        splashScreen.classList.remove('show');
     }, 2000 + 1200);
 }
 
