@@ -4,6 +4,87 @@ html, body {
     -ms-overflow-style: none;  /* IE and Edge */
 }
 
+/* Splash Screen Styles */
+.splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Doors */
+.door {
+    position: absolute;
+    top: 0;
+    width: 50vw;
+    height: 100vh;
+    z-index: 2;
+    background-image: linear-gradient(to bottom, rgb(6, 6, 30) 5%, rgb(8, 8, 50) 35%, rgb(10, 10, 70) 65%, rgb(12, 12, 90) 100%);
+    background-size: 100vw 100vh;
+    background-repeat: no-repeat;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+.door-left { left: 0; background-position: left top; }
+.door-right { right: 0; background-position: right top; }
+.door-left::after, .door-right::after { display: none; }
+
+.splash-content {
+    position: relative;
+    text-align: center;
+    z-index: 3;
+}
+
+.splash-icon {
+    font-family: 'Doto', monospace;
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    animation: iconSequence 2.0s ease-in-out forwards; /* finish before doors open */
+    display: inline-flex;
+    gap: 0.5rem;
+}
+.chev { display: inline-block; }
+
+/* Sync chevrons with doors when opening */
+.splash-screen.open-doors .door-left { animation: doorOpenLeft 1.2s ease-in-out forwards; }
+.splash-screen.open-doors .door-right { animation: doorOpenRight 1.2s ease-in-out forwards; }
+.splash-screen.open-doors .chev-left { animation: chevLeftFly 1.2s ease-in-out forwards; }
+.splash-screen.open-doors .chev-right { animation: chevRightFly 1.2s ease-in-out forwards; }
+
+/* Keyframes */
+@keyframes iconSequence {
+    0% { transform: scale(1) rotate(0deg); }
+    60% { transform: scale(1) rotate(720deg); }
+    75% { transform: scale(1) rotate(720deg); }
+    100% { transform: scale(2.2) rotate(720deg); }
+}
+
+@keyframes doorOpenLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+}
+@keyframes doorOpenRight {
+    from { transform: translateX(0); }
+    to { transform: translateX(100%); }
+}
+@keyframes chevLeftFly {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50vw); opacity: 1; }
+}
+@keyframes chevRightFly {
+    from { transform: translateX(0); }
+    to { transform: translateX(50vw); opacity: 1; }
+}
+
 html::-webkit-scrollbar, 
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari */
@@ -109,5 +190,5 @@ canvas {
 }
 
 .delay-200 { animation-delay: 0.2s; }
-.delay-400 { animation-delay: 0.4s; };
+.delay-400 { animation-delay: 0.4s; }
 

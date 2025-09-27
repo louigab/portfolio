@@ -1,3 +1,19 @@
+// Splash Screen Handler
+function initSplashScreen() {
+    const splashScreen = document.getElementById('splashScreen');
+    if (!splashScreen) return;
+
+    // After icon sequence completes, open doors and fly chevrons
+    setTimeout(() => {
+        splashScreen.classList.add('open-doors');
+    }, 2000);
+
+    // Remove splash after door animation completes
+    setTimeout(() => {
+        splashScreen.style.display = 'none';
+    }, 2000 + 1200);
+}
+
 // 3D stars
 let scene, camera, renderer, stars;
 let currentSpeed = 0.05; 
@@ -62,8 +78,12 @@ window.addEventListener("resize", () => {
     renderer.setSize(window.innerWidth, window.innerHeight);
 });
 
-init();
-animate();
+// Initialize everything when DOM loads
+document.addEventListener("DOMContentLoaded", function() {
+    initSplashScreen();
+    init();
+    animate();
+});
 
 // Dark Mode/Light Mode 
 function changeMode() {
@@ -103,14 +123,16 @@ const modal = document.getElementById('certificateModal');
 const modalImg = document.getElementById('modalImage');
 const certificateImages = document.querySelectorAll('.certificate-img');
 
-certificateImages.forEach(img => {
-    img.addEventListener('click', () => {
-        modalImg.src = img.src;
-        modalImg.alt = img.alt;
-        modal.classList.remove('hidden');
+if (certificateImages && certificateImages.length && modal && modalImg) {
+    certificateImages.forEach(img => {
+        img.addEventListener('click', () => {
+            modalImg.src = img.src;
+            modalImg.alt = img.alt;
+            modal.classList.remove('hidden');
+        });
     });
-});
 
-modal.addEventListener('click', () => {
-    modal.classList.add('hidden');
-});
+    modal.addEventListener('click', () => {
+        modal.classList.add('hidden');
+    });
+}

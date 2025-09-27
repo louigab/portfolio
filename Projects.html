@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Louis Gabriel Damondamon</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,6 +25,7 @@
                     <ul class="hidden lg:flex space-x-5 ">
                         <li><a href="index.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">HOME</a></li>
                         <li><a href="about.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">ABOUT ME</a></li>
+                        <li><a href="Projects.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">PROJECTS</a></li>
                         <li><a href="techstack.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">TECH STACK</a></li>
                         <li><a href="certificates.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">CERTIFICATES</a></li>
                         <li><a href="contacts.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">CONTACTS</a></li>
@@ -39,21 +39,58 @@
             <ul class="flex flex-col items-center space-y-4 py-6">
                 <li><a href="index.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">HOME</a></li>
                 <li><a href="about.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">ABOUT ME</a></li>
+                <li><a href="Projects.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">PROJECTS</a></li>
                 <li><a href="techstack.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">TECH STACK</a></li>
                 <li><a href="certificates.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">CERTIFICATES</a></li>
                 <li><a href="contacts.html" class="text-lg hover:scale-110 inline-block hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-all duration-300">CONTACTS</a></li>
             </ul>
         </div>
 
-        <!-- Home -->
-        <section id="home" class="min-h-screen pt-20">
-            <div class="mx-10 md:mx-48 flex flex-col lg:flex-row items-center justify-between">
-                <div class="text-center lg:text-left mb-8 lg:mb-0"> 
-                    <h1 class="Name text-center lg:text-left text-4xl lg:text-5xl text-white font-bold mb-2 drop-shadow-[0_0_5px_rgba(255,255,255,1)] fade-in-up">LOUIS GABRIEL DAMONDAMON</h1>
-                    <p class="text-3xl lg:text-4xl text-gray-200 fade-in-up delay-200">Tech Enthusiast</p>
-                </div>
-                <div class="w-1/2 drop-shadow-[0_0_10px_rgba(255,255,255,1)] fade-in-up delay-400">
-                    <img src="icons-logos/my-pic.jpg" alt="Louis Gabriel Damondamon Picture" class="w-full max-w-sm rounded-full shadow-lg border-4 border-white">
+        <!-- Projects -->
+        <section id="projects" class="min-h-screen pt-20">
+            <div class="container mx-auto text-center px-4">
+                <h2 class="Tech text-4xl font-bold mb-8 text-white drop-shadow-[0_0_5px_rgba(255,255,255,1)] fade-in-up">MY PROJECTS</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mx-10 lg:mx-20">
+                    
+                    <!-- Project Card 1 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300 fade-in-up delay-200">
+                        <div class="w-full h-48 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg mb-4 flex items-center justify-center">
+                            <img src="project-images/project1.png" alt="REVU: Gamified Flashcards App" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 drop-shadow-[0_0_3px_rgba(255,255,255,1)]">REVU: Gamified Flashcards</h3>
+                        <p class="text-gray-200 mb-4 text-sm">A gamified learning platform that transforms studying into an engaging experience through interactive flashcards with progression tracking and rewards.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-500 bg-opacity-30 text-blue-200 rounded text-xs">Flutter</span>
+                            <span class="px-2 py-1 bg-purple-500 bg-opacity-30 text-purple-200 rounded text-xs">SQL</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300 fade-in-up delay-300">
+                        <div class="w-full h-48 bg-gradient-to-br from-green-500 to-teal-600 rounded-lg mb-4 overflow-hidden">
+                            <img src="project-images/project2.png" alt="Fastfood Ordering App" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 drop-shadow-[0_0_3px_rgba(255,255,255,1)]">Fastfood Ordering App</h3>
+                        <p class="text-gray-200 mb-4 text-sm">A mobile application for ordering fast food with real-time menu updates, order tracking, and seamless payment integration for quick and convenient dining.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-green-500 bg-opacity-30 text-green-200 rounded text-xs">Android Studio</span>
+                            <span class="px-2 py-1 bg-red-500 bg-opacity-30 text-red-200 rounded text-xs">Java</span>
+                            <span class="px-2 py-1 bg-purple-500 bg-opacity-30 text-purple-200 rounded text-xs">Supabase</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-white bg-opacity-10 backdrop-blur-md rounded-lg p-6 border border-white border-opacity-20 hover:scale-105 hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300 fade-in-up delay-400">
+                        <div class="w-full h-48 bg-gradient-to-br from-red-500 to-pink-600 rounded-lg mb-4 overflow-hidden">
+                            <img src="project-images/project3.png" alt="SMARTEVENT: Event Organizer" class="w-full h-full object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2 drop-shadow-[0_0_3px_rgba(255,255,255,1)]">SMARTEVENT: Event Organizer</h3>
+                        <p class="text-gray-200 mb-4 text-sm">A comprehensive event management platform that streamlines event planning, attendee management, and real-time coordination for seamless event execution.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2 py-1 bg-blue-500 bg-opacity-30 text-blue-200 rounded text-xs">Flutter</span>
+                            <span class="px-2 py-1 bg-purple-500 bg-opacity-30 text-purple-200 rounded text-xs">Supabase</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
