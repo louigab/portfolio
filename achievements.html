@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Louis Gabriel Damondamon</title>
+    <title>Louis Gabriel Damondamon - Achievements</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Kode+Mono:wght@400..700&display=swap" rel="stylesheet">
@@ -49,36 +49,30 @@
             </ul>
         </div>
 
-        <!-- Certificates -->
-        <section id="certificates" class="min-h-screen pt-20">
+        <!-- Achievements -->
+        <section id="achievements" class="min-h-screen pt-20">
             <div class="container mx-auto text-center px-4">
-                <h2 class="Tech text-4xl font-bold mb-8 text-white drop-shadow-[0_0_5px_rgba(255,255,255,1)] fade-in-up">CERTIFICATES</h2>
-                <div class="flex flex-wrap justify-center gap-8 mx-10">
-                    <div class="fade-in-up delay-200 flex flex-col items-center">
-                        <img src="certficates/damondamon-word-2019-associate-certificate.jpg" alt="damondamon-word-2019-associate-certificate" class="certificate-img w-60 h-auto border-4 border-white hover:scale-110 hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-transform duration-300 cursor-pointer">
-                        <p class="text-white mt-2 max-w-[240px]">Microsoft Office Word 2019 Associate Certificate</p>
-                    </div>
-                    <div class="fade-in-up delay-200 flex flex-col items-center">
-                        <img src="certficates/damondamon-powerPoint-2019-Associate-certificate.jpg" alt="damondamon_powerPoint_2019_associate" class="certificate-img w-60 h-auto border-4 border-white hover:scale-110 hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-transform duration-300 cursor-pointer">
-                        <p class="text-white mt-2 max-w-[240px]">Microsoft Office PowerPoint 2019 Associate Certificate</p>
-                    </div>
-                    <div class="fade-in-up delay-200 flex flex-col items-center">
-                        <img src="certficates/damondamon-javafoundations-Certificate.jpg" alt="damondamon_javafoundations-certificate" class="certificate-img w-60 h-auto border-4 border-white hover:scale-110 hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-transform duration-300 cursor-pointer">
-                        <p class="text-white mt-2 max-w-[240px]">Oracle Java Foundations Certificate</p>
-                    </div>
-                    <div class="fade-in-up delay-200 flex flex-col items-center">
-                        <img src="certficates/damondamon-databases-certificate.png" alt="damondamon_databases_certificate" class="certificate-img w-60 h-auto border-4 border-white hover:scale-110 hover:drop-shadow-[0_0_5px_rgba(255,255,255,1)] transition-transform duration-300 cursor-pointer">
-                        <p class="text-white mt-2 max-w-[240px]">Databases Certificate</p>
+                <h2 class="About text-4xl font-bold mb-4 text-white drop-shadow-[0_0_5px_rgba(255,255,255,1)] fade-in-up">ACHIEVEMENTS</h2>
+                <p class="text-white text-lg mb-12 fade-in-up delay-200">Milestones and memorable experiences</p>
+                
+                <!-- Hack4Gov 2025 Section -->
+                <div class="mb-16">
+                    <h3 class="About text-3xl font-bold mb-8 text-white drop-shadow-[0_0_5px_rgba(255,255,255,1)] fade-in-up delay-200">Hack4Gov 2025</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mx-10 lg:mx-48">
+                        <div class="fade-in-up delay-400">
+                            <img src="achievements/hack4gov_2025_1.jpg" alt="Hack4Gov 2025 Experience 1" class="w-full h-auto rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer achievement-img shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                        </div>
+                        <div class="fade-in-up delay-400">
+                            <img src="achievements/hack4gov_2025_2.jpg" alt="Hack4Gov 2025 Experience 2" class="w-full h-auto rounded-lg hover:scale-105 transition-transform duration-300 cursor-pointer achievement-img shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Modal -->
-        <div id="certificateModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-[100] hidden">
-            <div class="relative">
-                <img id="modalImage" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain">
-            </div>
+        <!-- Achievement Modal -->
+        <div id="achievementModal" class="hidden fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+            <img id="modalAchievementImage" src="" alt="" class="max-w-full max-h-[90vh] object-contain">
         </div>
         
         <script src="https://cdn.tailwindcss.com"></script>

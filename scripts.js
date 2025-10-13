@@ -145,3 +145,22 @@ if (certificateImages && certificateImages.length && modal && modalImg) {
         modal.classList.add('hidden');
     });
 }
+
+// Achievement Modal
+const achievementModal = document.getElementById('achievementModal');
+const modalAchievementImg = document.getElementById('modalAchievementImage');
+const achievementImages = document.querySelectorAll('.achievement-img');
+
+if (achievementImages && achievementImages.length && achievementModal && modalAchievementImg) {
+    achievementImages.forEach(img => {
+        img.addEventListener('click', () => {
+            modalAchievementImg.src = img.src;
+            modalAchievementImg.alt = img.alt;
+            achievementModal.classList.remove('hidden');
+        });
+    });
+
+    achievementModal.addEventListener('click', () => {
+        achievementModal.classList.add('hidden');
+    });
+}
